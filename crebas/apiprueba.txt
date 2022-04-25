@@ -1,0 +1,102 @@
+Personas
+GET https://localhost:44301/api/Persona/AllPersons
+
+Cliente
+POST https://localhost:44337/api/Cliente/InsertarCliente?transaccion=I
+{
+"IdCliente":0,
+"IdPersona":1,
+"Contrasena":"leon1989",
+"Estado":"A",
+"Edad":32,
+"Identificacion":"1717576878",
+"Direccion":"San Juan",
+"Genero":"Masculino",
+"Nombre":"Leonardo Ortiz",
+"Telefono":"984375083"
+}
+
+PUT https://localhost:44337/api/Cliente/ActualizarCliente?transaccion=U
+{
+"IdCliente":4,
+"IdPersona":1,
+"Contrasena":"leon1989713",
+"Estado":"A",
+"Edad":33,
+"Identificacion":"1717576878",
+"Direccion":"San Juan Quito",
+"Genero":"Masculino",
+"Nombre":"Leonardo Jose Ortiz Jacome",
+"Telefono":"0984375083"
+}
+
+DELETE https://localhost:44337/api/Cliente/BorrarCliente?transaccion=D
+{
+"IdCliente":1,
+"IdPersona":1,
+"Contrasena":"leon1989713",
+"Estado":"A",
+"Edad":32,
+"Identificacion":"1717576878",
+"Direccion":"San Juan Quito",
+"Genero":"Masculino",
+"Nombre":"Leonardo Jose Ortiz Jacome",
+"Telefono":"0984375083"
+}
+
+Cuenta
+POST https://localhost:44337/api/Cuenta/ActualizarCuenta?transaccion=I
+{
+  "idCuenta": 1,
+  "idCliente": 4,
+  "numeroCuenta": "00025001",
+  "tipoCuenta": "Ahorro",
+  "saldoInicial": 300,
+  "estado": "A"
+}
+PUT https://localhost:44337/api/Cuenta/ActualizarCuenta?transaccion=U
+{
+  "idCuenta": 1,
+  "idCliente": 4,
+  "numeroCuenta": "00025001",
+  "tipoCuenta": "Ahorro",
+  "saldoInicial": 300,
+  "estado": "A"
+}
+
+DELETE https://localhost:44337/api/Cuenta/BorrarCuenta?transaccion=D
+{
+  "idCuenta": 1,
+  "idCliente": 4,
+  "numeroCuenta": "00025001",
+  "tipoCuenta": "Ahorro",
+  "saldoInicial": 300,
+  "estado": "A"
+}
+
+Movimiento
+POST https://localhost:44337/api/Movimiento/InsertarMovimiento?transaccion=I
+ {"idMovimiento": 0,
+  "idCuenta": 1,
+  "fecha": "2022-04-25T00:35:27.068Z",
+  "tipo": "0",
+  "valor": -300,
+  "saldo": 0}
+PUT https://localhost:44337/api/Movimiento/ActualizarMovimiento?transaccion=U
+ {"idMovimiento": 0,
+  "idCuenta": 1,
+  "fecha": "2022-04-25T00:35:27.068Z",
+  "tipo": "0",
+  "valor": -300,
+  "saldo": 0}
+
+DELETE https://localhost:44337/api/Movimiento/BorrarMovimiento?transaccion=D
+ {"idMovimiento": 0,
+  "idCuenta": 1,
+  "fecha": "2022-04-25T00:35:27.068Z",
+  "tipo": "0",
+  "valor": -300,
+  "saldo": 0}
+
+Reporte
+GET https://localhost:44337/api/Movimiento/Reportes?fechas=2022-04-20T00:35:27.068Z/2022-04-25T00:35:27.068Z&idcliente=4
